@@ -1,0 +1,6 @@
+    public void set[fieldNameFunc]([fieldType] value){
+        this.[fieldName] = value;
+    }
+    public [fieldType] get[fieldNameFunc](){
+        return this.[fieldName];
+    }
