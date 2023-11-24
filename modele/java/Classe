@@ -1,0 +1,12 @@
+package [package];
+
+//[using]
+
+@Table(name = "[tableName]")
+class [className]
+{
+
+[fields]
+
+[encapsulation]   
+}
