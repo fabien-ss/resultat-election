@@ -1,9 +1,10 @@
 package [package];
 
-//[using]
+import dao.annotation.Table;
+import dao.annotation.Column;
 
 @Table(name = "[tableName]")
-class [className]
+public class [className]
 {
 
 [fields]

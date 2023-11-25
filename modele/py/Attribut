@@ -1,0 +1,1 @@
+    this.[fieldName] = Column([fieldType])

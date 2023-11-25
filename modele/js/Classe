@@ -1,0 +1,20 @@
+
+
+//[imort]
+
+
+/*
+    *
+    *   Scaffolding, 
+    * 
+*/
+class [className]
+{
+
+    constructor()
+    {
+        [fields]
+    }
+
+[encapsulation]   
+}

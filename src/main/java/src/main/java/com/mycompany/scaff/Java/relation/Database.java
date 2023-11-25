@@ -7,19 +7,23 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import src.main.java.com.mycompany.scaff.Java.utils.Mapping;
+
 public class Database {
     
     String databaseName;
     List<Table> tables;
 
-    public void writeClasses(String language, String path){
+    public void writeClasses(String language, String path, String k) throws Exception{
+        Mapping mapping = new Mapping();
+        mapping.setMappingFromList(language);
         for (Table table : this.tables) {
-            table.write(language, path);
+            table.write(language, path, mapping, k);
         }
     }
 
-    public void getDatabase(Connection connexion) throws ClassNotFoundException, SQLException{
-        List<Table> tables = new ArrayList<>();
+    public void setDatabase(Connection connexion) throws ClassNotFoundException, SQLException{
+        this.tables = new ArrayList<>();
         
         DatabaseMetaData metaData = connexion.getMetaData();
         String nomBaseDeDonnees = connexion.getCatalog();
@@ -36,9 +40,9 @@ public class Database {
                 String typeColonne = resultSetColonnes.getString("TYPE_NAME");
                 table.addColumn(nomColonne, typeColonne);
             }
-            tables.add(table);
+            this.tables.add(table);
         }
-        this.tables = tables;
+//        this.tables = tables;
     }
    
     public String getDatabaseName() {

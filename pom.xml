@@ -18,7 +18,12 @@
         <artifactId>postgresql</artifactId>
         <version>42.6.0</version>
     </dependency>
-
+    
+    <dependency>
+        <groupId>info.picocli</groupId>
+        <artifactId>picocli</artifactId>
+        <version>4.7.0</version>
+    </dependency>
     </dependencies>
 
   <build>
@@ -66,5 +71,4 @@
       </plugins>
     </pluginManagement>
   </build>
-
 </project>

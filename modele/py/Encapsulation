@@ -1,0 +1,6 @@
+    def set[fieldNameFunc](self, value):
+        this.[fieldName] = value
+    
+    def get[fieldNameFunc](self):
+        return this.[fieldName]
+    

@@ -1,0 +1,21 @@
+
+
+//[imort]
+
+
+/*
+    *
+    *   Scaffolding, 
+    * 
+*/
+<?php
+
+class [className]
+{
+
+[fields]
+    
+[encapsulation]   
+}
+
+?>

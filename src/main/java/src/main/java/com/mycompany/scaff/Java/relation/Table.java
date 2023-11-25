@@ -1,8 +1,5 @@
 package src.main.java.com.mycompany.scaff.Java.relation;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,8 +12,8 @@ public class Table {
     HashMap<String, String> columns = new HashMap<String, String>();
     String dataBase;
 
-    public void write(String launguage, String pathOut){
-        String out = System.getProperty("user.dir") + "/" + pathOut + "/" +
+    public void write(String launguage, String pathOut, Mapping mapping, String k) throws Exception{
+        String out = pathOut + "/"+
         TableUtility.firtLetterToUpper(TableUtility.ToJavaFormat(this.name)) + "." + launguage;
         
         String path = System.getProperty("user.dir") + "/modele/"+launguage+"/Classe";
@@ -29,25 +26,19 @@ public class Table {
         HashMap<String, String> data = new HashMap<String, String>();
         data.put("[tableName]", this.name);
         data.put("[className]", TableUtility.firtLetterToUpper(TableUtility.ToJavaFormat(this.name)));
-        modele = remplacerVariables(modele, attributModel, encapsulationModel, pathOut);
+        modele = remplacerVariables(modele, attributModel, encapsulationModel, pathOut, mapping, k);
         TableUtility.ecrireLettre(modele, out);
     }
-    public String remplacerVariables(String modele, String attributModel, String encapsulationModel, String pathOut) {
+    public String remplacerVariables(String modele, String attributModel, String encapsulationModel, String pathOut, Mapping mapping, String k) {
         pathOut = pathOut.replace("/", ".");
-        modele = modele.replace("[package]", pathOut);
+        modele = modele.replace("[package]", k);
         modele = modele.replace("[tableName]", this.name);
         modele = modele.replace("[className]", TableUtility.firtLetterToUpper(TableUtility.ToJavaFormat(this.name)));
-       
         String finalAttribute = "";
-
         String finalEncapsulation = "";
 
         for (Map.Entry<String, String> entry : this.columns.entrySet()) {
-           // modele = modele.replace(entry.getKey(), entry.getValue());
-            System.out.println(entry.getValue());
-            Mapping map = new Mapping();
-            String type = map.getMapping(entry.getValue().toUpperCase());
-            System.out.println("type");
+            String type = mapping.getMapping(entry.getValue()+"");
             String attribut =  attributModel.replace("[fieldType]",type)
             .replace("[fieldName]",TableUtility.ToJavaFormat(entry.getKey()))
             .replace("[columnName]", entry.getKey())

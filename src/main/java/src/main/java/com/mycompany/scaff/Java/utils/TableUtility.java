@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TableUtility {
-    public static String chargerModele(String cheminFichier) {
+    public static String chargerModele(String cheminFichier) throws Exception {
         StringBuilder contenu = new StringBuilder();
         try (BufferedReader reader = new BufferedReader(new FileReader(cheminFichier))) {
             String ligne;
@@ -17,7 +17,7 @@ public class TableUtility {
                 contenu.append(ligne).append("\n");
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new Exception(e.getMessage());
         }
         return contenu.toString();
     }
