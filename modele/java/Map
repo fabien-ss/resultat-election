@@ -14,5 +14,6 @@ date=java.sql.Date
 time=java.sql.Time
 timestamp=java.sql.Timestamp
 timestampz=java.sql.Timestamp
-serial=Integer
+timestamptz=java.sql.Timestamp
+serial=String
 bool=Boolean

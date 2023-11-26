@@ -2,12 +2,11 @@ package [package];
 
 import dao.annotation.Table;
 import dao.annotation.Column;
-
+// ok
 @Table(name = "[tableName]")
 public class [className]
 {
 
 [fields]
-
 [encapsulation]   
 }

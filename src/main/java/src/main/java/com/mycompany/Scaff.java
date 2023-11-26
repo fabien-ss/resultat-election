@@ -7,8 +7,8 @@ package src.main.java.com.mycompany;
 import java.io.Console;
 import java.sql.SQLException;
 
-import src.main.java.com.mycompany.scaff.Java.connexion.Connexion;
-import src.main.java.com.mycompany.scaff.Java.relation.Database;
+import src.main.java.com.mycompany.scaff.java.connexion.Connexion;
+import src.main.java.com.mycompany.scaff.java.relation.Database;
 
 /**
  *
@@ -21,29 +21,14 @@ public class Scaff {
         Connexion connexion;
         
         try {
-          Console console = System.console();
-          if (console == null) {
-              System.out.println("La console n'est pas disponible. Utilisez System.in");
-              System.exit(1);
-          }
-
-          char[] passwordArray = console.readPassword("Entrez votre mot de passe : ");
-
-          String password = new String(passwordArray);
-          java.util.Arrays.fill(passwordArray, ' ');
-          console.flush();
-
-          //  if(!args[0].equals("-d")) throw new Exception("Option -d vide");
-           // if(!args[2].equals("-l")) throw new Exception("Option -l vide");
-          connexion = new Connexion(/*"chat" */args[0], args[1], password);
+          connexion = new Connexion(/*"chat" args[0], args[1], password*/);
           java.sql.Connection c = connexion.enterBdd(); 
           Database database = new Database();
           database.setDatabase(c);
-          database.writeClasses(args[3],args[4], args[5]);// "home/fabien/Documents/GitHub/Framework/Test-framework/WEB-INF/classes");
+          database.writeClasses(args[1],args[2], args[3], args[4]);
           c.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        if(args.length > 0) System.out.println(args[0]);
     }       
 }

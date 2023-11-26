@@ -16,3 +16,4 @@ timestamp=DateTime
 timestampz=DateTime
 serial=Int
 bool=Bool
+timestamptz=DateTime

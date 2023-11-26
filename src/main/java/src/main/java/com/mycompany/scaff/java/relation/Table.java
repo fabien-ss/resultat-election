@@ -1,10 +1,10 @@
-package src.main.java.com.mycompany.scaff.Java.relation;
+package src.main.java.com.mycompany.scaff.java.relation;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import src.main.java.com.mycompany.scaff.Java.utils.Mapping;
-import src.main.java.com.mycompany.scaff.Java.utils.TableUtility;
+import src.main.java.com.mycompany.scaff.java.utils.Mapping;
+import src.main.java.com.mycompany.scaff.java.utils.TableUtility;
 
 public class Table {
     
@@ -12,17 +12,19 @@ public class Table {
     HashMap<String, String> columns = new HashMap<String, String>();
     String dataBase;
 
-    public void write(String launguage, String pathOut, Mapping mapping, String k) throws Exception{
+    public void write(String launguage, String pathOut,String k, Mapping mapping) throws Exception{
         String out = pathOut + "/"+
         TableUtility.firtLetterToUpper(TableUtility.ToJavaFormat(this.name)) + "." + launguage;
         
-        String path = System.getProperty("user.dir") + "/modele/"+launguage+"/Classe";
-        String attributeModelPath = System.getProperty("user.dir") + "/modele/"+launguage+"/Attribut";
-        String encapsulationModelPath = System.getProperty("user.dir") + "/modele/"+launguage+"/Encapsulation";
+        String path =System.getProperty("user.dir") + "/modele/"+launguage+"/Classe";
+        String attributeModelPath =System.getProperty("user.dir") +  "/modele/"+launguage+"/Attribut";
+        String encapsulationModelPath =System.getProperty("user.dir") + "/modele/"+launguage+"/Encapsulation";
+        
+        
         String modele = TableUtility.chargerModele(path);
         String attributModel = TableUtility.chargerModele(attributeModelPath);
         String encapsulationModel = TableUtility.chargerModele(encapsulationModelPath);
-
+       
         HashMap<String, String> data = new HashMap<String, String>();
         data.put("[tableName]", this.name);
         data.put("[className]", TableUtility.firtLetterToUpper(TableUtility.ToJavaFormat(this.name)));
@@ -51,10 +53,10 @@ public class Table {
             replace("[fieldType]", type)
             .replace("[fieldName]", TableUtility.ToJavaFormat(entry.getKey()))
             .concat("\n");
-        
         }
         modele = modele.replace("[fields]", finalAttribute);
         modele = modele.replace("[encapsulation]", finalEncapsulation);
+       
         return modele;
     }
     public Table(){}

@@ -1,4 +1,4 @@
-package src.main.java.com.mycompany.scaff.Java.utils;
+package src.main.java.com.mycompany.scaff.java.utils;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -31,7 +31,7 @@ public class TableUtility {
     }
     public static String ToJavaFormat(String fieldName){
         String retour = fieldName;
-        List<String> regex = new ArrayList();//<String>();
+        List<String> regex = new ArrayList<>();
         for (int i = 0; i < retour.length(); i++) {
             String field = retour.charAt(i) + "";
             if(field.equals("_") & i < retour.length()){

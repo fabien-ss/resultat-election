@@ -16,3 +16,4 @@ timestamp=var
 timestampz=var
 serial=var
 bool=var
+timestamptz=var
