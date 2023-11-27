@@ -28,7 +28,7 @@ public class Scaff {
           database.writeClasses(args[1],args[2], args[3], args[4]);
           c.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());//.printStackTrace();
         }
     }       
 }

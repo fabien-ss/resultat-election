@@ -30,7 +30,8 @@ public class Database {
             this.writeClasses(language, path, k);
         }
         else{
-            int i = 1;
+            int i = 0;
+            
             for (Table table : this.tables) {
                 i += 1;
                 if(table.getName().equals(tableName)){
@@ -41,12 +42,12 @@ public class Database {
             if(i == tables.size()){
                 throw new Exception("La table "+tableName+" n'existe pas dans la base de donnée.");
             }
+            System.out.println(i + " " + tables.size());
         }
     }
 
     public void setDatabase(Connection connexion) throws ClassNotFoundException, SQLException{
         this.tables = new ArrayList<>();
-        
         DatabaseMetaData metaData = connexion.getMetaData();
         String nomBaseDeDonnees = connexion.getCatalog();
         this.databaseName = nomBaseDeDonnees;
@@ -64,7 +65,6 @@ public class Database {
             }
             this.tables.add(table);
         }
-//        this.tables = tables;
     }
    
     public String getDatabaseName() {

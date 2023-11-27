@@ -27,6 +27,7 @@ public class Table {
        
         HashMap<String, String> data = new HashMap<String, String>();
         data.put("[tableName]", this.name);
+        
         data.put("[className]", TableUtility.firtLetterToUpper(TableUtility.ToJavaFormat(this.name)));
         modele = remplacerVariables(modele, attributModel, encapsulationModel, pathOut, mapping, k);
         TableUtility.ecrireLettre(modele, out);
@@ -40,6 +41,7 @@ public class Table {
         String finalEncapsulation = "";
 
         for (Map.Entry<String, String> entry : this.columns.entrySet()) {
+            String camelCase = TableUtility.ToJavaFormat(entry.getKey());
             String type = mapping.getMapping(entry.getValue()+"");
             String attribut =  attributModel.replace("[fieldType]",type)
             .replace("[fieldName]",TableUtility.ToJavaFormat(entry.getKey()))
