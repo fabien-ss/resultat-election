@@ -1,6 +1,0 @@
-    function set[fieldNameFunc]($value){
-        this->[fieldName] = $value;
-    }
-    get[fieldNameFunc](){
-        return this->[fieldName];
-    }

@@ -1,6 +1,10 @@
-/home/fabien/Documents/GitHub/scaff/src/main/java/src/main/java/com/mycompany/scaff/java/connexion/Connexion.java
-/home/fabien/Documents/GitHub/scaff/src/main/java/src/main/java/com/mycompany/Scaff.java
-/home/fabien/Documents/GitHub/scaff/src/main/java/src/main/java/com/mycompany/scaff/java/relation/Database.java
-/home/fabien/Documents/GitHub/scaff/src/main/java/src/main/java/com/mycompany/scaff/java/utils/TableUtility.java
-/home/fabien/Documents/GitHub/scaff/src/main/java/src/main/java/com/mycompany/scaff/java/utils/Mapping.java
-/home/fabien/Documents/GitHub/scaff/src/main/java/src/main/java/com/mycompany/scaff/java/relation/Table.java
+/home/fabien/Documents/GitHub/resultatElection/src/main/java/src/scaff/java/resultat/ResultatCandidat.java
+/home/fabien/Documents/GitHub/resultatElection/src/main/java/src/scaff/java/Entity/Resultat.java
+/home/fabien/Documents/GitHub/resultatElection/src/main/java/src/scaff/java/resultat/ResultatBureauVote.java
+/home/fabien/Documents/GitHub/resultatElection/src/main/java/src/scaff/java/connexion/Connexion.java
+/home/fabien/Documents/GitHub/resultatElection/src/main/java/src/scaff/java/connexion/Mapping.java
+/home/fabien/Documents/GitHub/resultatElection/src/main/java/src/scaff/java/connexion/TableUtility.java
+/home/fabien/Documents/GitHub/resultatElection/src/main/java/src/scaff/java/Main.java
+/home/fabien/Documents/GitHub/resultatElection/src/main/java/src/scaff/java/test/Main.java
+/home/fabien/Documents/GitHub/resultatElection/src/main/java/src/scaff/java/Entity/Statistique.java
+/home/fabien/Documents/GitHub/resultatElection/src/main/java/src/scaff/java/connexion/DbConnexion.java
